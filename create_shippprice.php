@@ -24,16 +24,28 @@
                                     <p class="card-description">أدخل تفاصيل سعر الشحن الجديد.</p>
 
                                     <form class="forms-sample" action="process_create_shipping.php" method="POST">
-                                        <div class="form-group">
-                                            <label for="address">عنوان الشحن</label>
-                                            <select dir="ltr"class="form-select" id="address" name="address" required>
-                                                <option selected disabled>اختر</option>
-                                                <option value="1">تركيا جوي</option>
-                                                <option value="2">تركيا بحري</option>
-                                                <option value="3">الإمارات جوي</option>
-                                            </select>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="address">عنوان الشحن</label>
+                                                <select dir=""class="form-select" id="address" name="address" required>
+                                                    <option selected disabled>اختر</option>
+                                                    <option value="1">تركيا جوي</option>
+                                                    <option value="2">تركيا بحري</option>
+                                                    <option value="3">الإمارات جوي</option>
+                                                </select>
+                                            </div>
                                         </div>
+                                        <div class="col-md-3">
 
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" checked name="isactive" id="checkNativeSwitch" switch>
+                                                    <label class="form-check-label" for="checkNativeSwitch">
+                                                        مُفعل
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <div class="form-group">
@@ -61,22 +73,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <div class="form-check col-md-6 form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="status" id="statusActive" value="مٌفعل" checked>
-                                                    <label class="form-check-label" for="statusActive">
-                                                        مٌفعل
-                                                    </label>
-                                                </div>
-                                                <div class="form-check col-md-6 form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="status" id="statusInactive" value="غير مٌفعل">
-                                                    <label class="form-check-label" for="statusInactive">
-                                                        غير مٌفعل
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
 
                                         <button type="submit" class="btn btn-primary mr-2">إضافة السعر</button>
                                         <a href="shipprices.php" class="btn btn-light">إلغاء</a> <!-- Assuming your list page is shipping_prices.php -->

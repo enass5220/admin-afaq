@@ -33,18 +33,18 @@
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <label for="orderno" class="form-label">رقم الطلب (Order Number)</label>
-                                                <input type="text" dir="ltr" required class="form-control" id="orderno" aria-label="Order Number" name="orderno" placeholder="رقم الطلب في shein">
+                                                <input type="text" dir="" required class="form-control" id="orderno" aria-label="Order Number" name="orderno" placeholder="رقم الطلب في shein">
                                             </div>
                                         </div>
 
                                         <div class="row">
                                             <div class="col-md-6 mb-3">
                                                 <label for="trackno" class="form-label">رقم الشحن (Tracking Number)</label>
-                                                <input type="text" dir="ltr" class="form-control" id="trackno" aria-label="Tracking Number" name="trackno" placeholder="رقم الشحن في shein (اختياري)">
+                                                <input type="text" dir="" class="form-control" id="trackno" aria-label="Tracking Number" name="trackno" placeholder="رقم الشحن في shein (اختياري)">
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <label for="olink" class="form-label">رابط الطلبية / السلة</label>
-                                                <input type="url" dir="ltr" required class="form-control" id="olink" aria-label="Order link" name="olink" placeholder="https://...">
+                                                <input type="url" dir="" required class="form-control" id="olink" aria-label="Order link" name="olink" placeholder="https://...">
                                             </div>
                                         </div>
 
@@ -63,7 +63,7 @@
                                             <div class="col-6 my-auto">
 
                                                 <label for="exchange_rate" class="form-label">سعر الصرف</label>
-                                                <select class="form-select" dir="ltr" id="exchange_rate" name="exchange_rate" required aria-label="Exchange Rate">
+                                                <select class="form-select" dir="" id="exchange_rate" name="exchange_rate" required aria-label="Exchange Rate">
                                                     <option value="" selected disabled>-- اختر سعر الصرف --</option>
                                                     <option value="5.50">5.50 LYD/USD</option>
                                                     <option value="5.45">5.45 LYD/USD</option>
@@ -92,7 +92,7 @@
                                             </div>
                                             <div class="col-md-6 my-auto">
                                                 <label for="shipment_method" class="form-label">طريقة الشحن</label>
-                                                <select dir="ltr" class="form-select" id="shipment_method" name="shipment_method" dir="ltr" required>
+                                                <select dir="" class="form-select" id="shipment_method" name="shipment_method" dir="" required>
                                                     <option value="" selected disabled>-- اختر طريقة الشحن --</option>
                                                     <option value="air">شحن جوي</option>
                                                     <option value="sea">شحن بحري</option>
@@ -107,7 +107,7 @@
                                         <div class="row">
                                             <div class="col-md-6 mb-3">
                                                 <label for="ostate" class="form-label">حالة الشحنة (للمشرف)</label> <!-- Clarified label -->
-                                                <select dir="ltr" class="form-select" id="ostate" name="ostate">
+                                                <select dir="" class="form-select" id="ostate" name="ostate">
                                                     <option value="1" selected>تم الانشاء</option>
                                                     <option value="2">وصلت إلى المخزن الخارجي</option>
                                                     <option value="3">وصلت إلى مخزن ليبيا</option>

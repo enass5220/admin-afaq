@@ -84,16 +84,22 @@ try {
                         <div class="col-lg-12 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">جميع الزبائن</h4>
-                                    <a href="create_client.php" class="btn btn-primary float-start" style="
-                                        position: relative;
-                                    ">زبون جديد </a><br>
-                                    <p class="card-description">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h4 class="card-title">جميع الزبائن</h4>
+                                            <p class="card-description">
                                         عرض لجميع الزبائن المسجلين في النظام.
-                                        <?php if (isset($_GET['status']) && $_GET['status'] === 'success'): ?>
-                                            <span class="text-success">تم إضافة الزبون بنجاح!</span>
-                                        <?php endif; ?>
-                                    </p>
+                                                <?php if (isset($_GET['status']) && $_GET['status'] === 'success'): ?>
+                                                    <span class="text-success">تم إضافة الزبون بنجاح!</span>
+                                                <?php endif; ?>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <a href="create_client.php" class="btn btn-primary btn-icon-text">
+                                                <i class="mdi mdi-plus btn-icon-prepend"></i>زبون جديد 
+                                            </a>
+                                        </div>
+                                    </div>
                                     <div class="table-responsive">
                                         <table class="table table-striped table-hover">
                                             <thead>

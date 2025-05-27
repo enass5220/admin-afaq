@@ -33,12 +33,18 @@
                         <div class="col-12 grid-margin stretch-card" style="direction: rtl;">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">قائمة جميع الطلبات</h4>
+                                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <h4 class="card-title">قائمة جميع الطلبات</h4>
                                     <p class="card-description pb-3"> عرض وتصفية طلبات الشحنات
-                                        <a href="create_order.php" class="btn btn-primary float-start" style="
-                                        position: relative;
-                                    ">شحنة جديدة</a>
-                                    </p>
+                        </p> 
+                      </div>
+                      <div>
+                          <a href="create_order.php" class="btn btn-primary btn-icon-text">
+                              <i class="mdi mdi-plus btn-icon-prepend"></i>شحنة جديدة
+                          </a>
+                      </div>
+                    </div>
                                     <!-- Filter Bar -->
                                     <form class="forms-sample p-3 border rounded shadow-sm mb-4 bg-light">
                                         <div class="row align-items-end">
@@ -51,7 +57,7 @@
                                             </div>
                                             <div class="col-md-3 mb-3">
                                                 <label for="filterStatus" class="form-label">حالة الشحنة</label>
-                                                <select class="form-select" id="filterStatus" name="filter_status" dir="ltr">
+                                                <select class="form-select" id="filterStatus" name="filter_status" dir="">
                                                     <option value="">الكل</option>
                                                     <option value="1">تم الانشاء</option>
                                                     <option value="2">وصلت إلى المخزن الخارجي</option>
@@ -63,7 +69,7 @@
                                             </div>
                                             <div class="col-md-3 mb-3">
                                                 <label for="filterShipmentMethod" class="form-label">طريقة الشحن</label>
-                                                <select class="form-select" id="filterShipmentMethod" name="filter_shipment_method" dir="ltr">
+                                                <select class="form-select" id="filterShipmentMethod" name="filter_shipment_method" dir="">
                                                     <option value="">الكل</option>
                                                     <option value="air">شحن جوي</option>
                                                     <option value="sea">شحن بحري</option>
@@ -105,7 +111,7 @@
                                                     <td>2023-10-25</td>
                                                     <td class="actions-btn-group">
                                                         <button type="button" class="btn btn-sm btn-info" title="عرض التفاصيل"><i class="fa fa-eye"></i></button>
-                                                        <button type="button" class="btn btn-sm btn-warning" title="تعديل"><i class="fa fa-edit"></i></button>
+                                                        <a type="button" href="update_order.php?id=" class="btn btn-sm btn-warning" title="تعديل"><i class="fa fa-edit"></i></a>
                                                         <button type="button" class="btn btn-sm btn-danger" title="حذف"><i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>

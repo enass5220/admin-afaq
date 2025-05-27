@@ -42,10 +42,12 @@
                                     
                                     <div class="form-group">
                                         <label for="status">الحالة</label>
-                                        <select dir="ltr" class="form-select" id="status" name="status" required>
-                                            <option value="فعال">فعال</option>
-                                            <option value="غير فعال">غير فعال</option>
-                                        </select>
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" checked name="isactive" id="checkNativeSwitch" switch>
+                                            <label class="form-check-label" for="checkNativeSwitch">
+                                                مُفعل
+                                            </label>
+                                        </div>
                                     </div>
                                     
                                     <button type="submit" class="btn btn-primary mr-2">إضافة السعر</button>

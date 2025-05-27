@@ -27,7 +27,7 @@
       <div class="collapse" id="ui-basic">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item"> <a class="nav-link" href="exrates.php">أسعار الصرف</a></li>
-           <li class="nav-item"> <a class="nav-link muted" href="#">عناوين الشحن</a></li>
+           <li class="nav-item"> <a class="nav-link muted" href="shipaddress.php">عناوين الشحن</a></li>
           <li class="nav-item"> <a class="nav-link" href="shipprices.php">أسعار الشحن</a></li>
         </ul>
       </div>

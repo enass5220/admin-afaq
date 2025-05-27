@@ -15,11 +15,19 @@
                 <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">أسعار صرف العملة</h4><a href="create_exrate.php" class="btn btn-primary float-start" style="
-                                        position: relative;
-                                    ">اضافة سعر صرف جديد</a>
-                    <p class="card-description"> سعر صرف الدينار الليبي مقابل العملات الأجنبية
-                    </p> 
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <h4 class="card-title">أسعار صرف العملة</h4> 
+                          <p class="card-description"> سعر صرف الدينار الليبي مقابل العملات الأجنبية
+                        </p> 
+                      </div>
+                      <div>
+                          <a href="create_exrate.php" class="btn btn-primary btn-icon-text">
+                              <i class="mdi mdi-plus btn-icon-prepend"></i> سعر صرف جديد
+                          </a>
+                      </div>
+                    </div>
+                   
                     <div class="table-responsive mt-3">
                       <table class="table table-hover">
                         <thead>
