@@ -134,6 +134,9 @@
     opacity: 1;
   }
 }
+body{
+  font-family: "Tajawal" !important;
+}
 @-webkit-keyframes flash {
   0% {
     opacity: 1;
@@ -8434,7 +8437,7 @@
   --bs-dark-border-subtle: #adb5bd;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
-  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-sans-serif: "tajawal", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
@@ -11489,7 +11492,7 @@ textarea.is-invalid.tt-hint, .select2-container--default .select2-selection--sin
   --bs-btn-disabled-border-color: #57B657;
 }
 
-.btn-info {
+.btn-outline-info {
   --bs-btn-color: #000;
   --bs-btn-bg: #248AFD;
   --bs-btn-border-color: #248AFD;
@@ -20559,34 +20562,6 @@ input:focus {
   outline: none;
 }
 
-@font-face {
-  font-family: "Nunito";
-  src: url("../fonts/Nunito/Nunito-Light.eot");
-  src: url("../fonts/Nunito/Nunito-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Nunito/Nunito-Light.woff2") format("woff2"), url("../fonts/Nunito/Nunito-Light.woff") format("woff"), url("../fonts/Nunito/Nunito-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Nunito";
-  src: url("../fonts/Nunito/Nunito-Bold.eot");
-  src: url("../fonts/Nunito/Nunito-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Nunito/Nunito-Bold.woff2") format("woff2"), url("../fonts/Nunito/Nunito-Bold.woff") format("woff"), url("../fonts/Nunito/Nunito-Bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Nunito";
-  src: url("../fonts/Nunito/Nunito-SemiBold.eot");
-  src: url("../fonts/Nunito/Nunito-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Nunito/Nunito-SemiBold.woff2") format("woff2"), url("../fonts/Nunito/Nunito-SemiBold.woff") format("woff"), url("../fonts/Nunito/Nunito-SemiBold.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Nunito";
-  src: url("../fonts/Nunito/Nunito-Regular.eot");
-  src: url("../fonts/Nunito/Nunito-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Nunito/Nunito-Regular.woff2") format("woff2"), url("../fonts/Nunito/Nunito-Regular.woff") format("woff"), url("../fonts/Nunito/Nunito-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
 .bg-twitter {
   background: #4747A1;
 }
@@ -21320,7 +21295,7 @@ code {
   background-image: none;
 }
 .performance-overview-carousel .carousel-control-prev:after {
-  font-family: "themify";
+  font-family: "tajawal";
   content: "\e64a";
   font-size: 0.875rem;
   color: #ffffff;
@@ -21335,7 +21310,7 @@ code {
   background-image: none;
 }
 .performance-overview-carousel .carousel-control-next:after {
-  font-family: "themify";
+  font-family: "tajawal";
   content: "\e649";
   font-size: 0.875rem;
   color: #ffffff;
@@ -21364,7 +21339,7 @@ code {
   background-image: none;
 }
 .detailed-report-carousel .carousel-control-prev:after {
-  font-family: "themify";
+  font-family: "tajawal";
   content: "\e64a";
   font-size: 0.875rem;
   color: #6c7383;
@@ -21379,7 +21354,7 @@ code {
   background-image: none;
 }
 .detailed-report-carousel .carousel-control-next:after {
-  font-family: "themify";
+  font-family: "tajawal";
   content: "\e649";
   font-size: 0.875rem;
   color: #6c7383;
@@ -22800,7 +22775,7 @@ code {
   border-left: 0;
   border-right: 0;
   border-bottom: 0;
-  font: normal normal normal 24px/1 "themify";
+  font: normal normal normal 24px/1 "tajawal";
   content: "\e64b";
   width: auto;
   height: auto;
@@ -23100,7 +23075,7 @@ dl li {
 .list-ticked li:before,
 .list-arrow li:before,
 .list-star li:before {
-  font-family: "themify";
+  font-family: "tajawal";
   margin-right: -1.5rem;
   width: 1.5rem;
   margin-left: 0.5rem;
@@ -23626,7 +23601,7 @@ dl li {
 }
 .expandable-table tr td.details-control:before {
   content: "\e64b";
-  font-family: "themify";
+  font-family: "tajawal";
 }
 .expandable-table tr td.details-control {
   cursor: pointer;
@@ -24020,7 +23995,7 @@ table.dataTable tbody td.select-checkbox:after {
 .sidebar {
   min-height: calc(100vh - 60px);
   background: #fff;
-  font-family: "Nunito", sans-serif;
+  font-family: "tajawal", sans-serif;
   font-weight: 500;
   padding: 0;
   width: 235px;
@@ -24092,7 +24067,7 @@ table.dataTable tbody td.select-checkbox:after {
 }
 .sidebar .nav .nav-item .nav-link i.menu-arrow:before {
   content: "\e64a";
-  font-family: "themify";
+  font-family: "tajawal";
   font-style: normal;
   display: block;
   font-size: 0.687rem;

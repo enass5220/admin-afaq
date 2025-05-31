@@ -9,8 +9,8 @@
 <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
 <!-- endinject -->
 <!-- Plugin css for this page -->
-<!-- <link rel="stylesheet" href="assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css"> -->
-<link rel="stylesheet" href="assets/vendors/datatables.net-bs5/dataTables.bootstrap5.css">
+<!-- <link rel="stylesheet" href="assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+<link rel="stylesheet" href="assets/vendors/datatables.net-bs5/dataTables.bootstrap.css"> -->
 <link rel="stylesheet" href="assets/vendors/ti-icons/css/themify-icons.css">
 <link rel="stylesheet" type="text/css" href="assets/js/select.dataTables.min.css">
 <!-- End plugin css for this page -->
@@ -18,5 +18,6 @@
 <link rel="stylesheet" href="assets/css/style.css">
 <!-- endinject -->
 <link rel="shortcut icon" href="assets/images/favicon.png" />
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.rtl.min.css" integrity="sha384-MdqCcafa5BLgxBDJ3d/4D292geNL64JyRtSGjEszRUQX9rhL1QkcnId+OT7Yw+D+" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Noto+Kufi+Arabic:wght@100..900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">

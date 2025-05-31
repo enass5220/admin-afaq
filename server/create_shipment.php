@@ -24,23 +24,9 @@ if (empty($input['username']) || empty($input['orderno']) || empty($input['olink
     ]);
     exit;
 }
-
-// --- Database Connection (Example using PDO) ---
-$host = 'localhost';
-$db   = 'logistics';
-$user = 'root';
-$pass = '';
-$charset = 'utf8mb4';
-
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-$options = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES   => false,
-];
-
+include "connn.php";
 try {
-    $pdo = new PDO($dsn, $user, $pass, $options);
+    $pdo = conopen();
 
     // Prepare data for insertion
     $username = $input['username'];

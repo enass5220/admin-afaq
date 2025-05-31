@@ -110,7 +110,7 @@
                                                     <td><span class="badge bg-info text-dark">وصلت إلى المخزن الخارجي</span></td>
                                                     <td>2023-10-25</td>
                                                     <td class="actions-btn-group">
-                                                        <button type="button" class="btn btn-sm btn-info" title="عرض التفاصيل"><i class="fa fa-eye"></i></button>
+                                                        <button type="button" class="btn btn-sm btn-outline-info" title="عرض التفاصيل"><i class="fa fa-eye"></i></button>
                                                         <a type="button" href="update_order.php?id=" class="btn btn-sm btn-warning" title="تعديل"><i class="fa fa-edit"></i></a>
                                                         <button type="button" class="btn btn-sm btn-danger" title="حذف"><i class="fa fa-trash"></i></button>
                                                     </td>
@@ -124,7 +124,7 @@
                                                     <td><span class="badge bg-success">تم التسليم</span></td>
                                                     <td>2023-10-22</td>
                                                     <td class="actions-btn-group">
-                                                        <button type="button" class="btn btn-sm btn-info" title="عرض التفاصيل"><i class="fa fa-eye"></i></button>
+                                                        <button type="button" class="btn btn-sm btn-outline-info" title="عرض التفاصيل"><i class="fa fa-eye"></i></button>
                                                         <button type="button" class="btn btn-sm btn-warning" title="تعديل"><i class="fa fa-edit"></i></button>
                                                         <button type="button" class="btn btn-sm btn-danger" title="حذف"><i class="fa fa-trash"></i></button>
                                                     </td>
@@ -138,7 +138,7 @@
                                                     <td><span class="badge bg-primary">تم الانشاء</span></td>
                                                     <td>2023-10-28</td>
                                                     <td class="actions-btn-group">
-                                                        <button type="button" class="btn btn-sm btn-info" title="عرض التفاصيل"><i class="fa fa-eye"></i></button>
+                                                        <button type="button" class="btn btn-sm btn-outline-info" title="عرض التفاصيل"><i class="fa fa-eye"></i></button>
                                                         <button type="button" class="btn btn-sm btn-warning" title="تعديل"><i class="fa fa-edit"></i></button>
                                                         <button type="button" class="btn btn-sm btn-danger" title="حذف"><i class="fa fa-trash"></i></button>
                                                     </td>
@@ -152,7 +152,7 @@
                                                     <td><span class="badge bg-warning text-dark">جاهز للتسليم</span></td>
                                                     <td>2023-10-20</td>
                                                     <td class="actions-btn-group">
-                                                        <button type="button" class="btn btn-sm btn-info" title="عرض التفاصيل"><i class="fa fa-eye"></i></button>
+                                                        <button type="button" class="btn btn-sm btn-outline-info" title="عرض التفاصيل"><i class="fa fa-eye"></i></button>
                                                         <button type="button" class="btn btn-sm btn-warning" title="تعديل"><i class="fa fa-edit"></i></button>
                                                         <button type="button" class="btn btn-sm btn-danger" title="حذف"><i class="fa fa-trash"></i></button>
                                                     </td>
@@ -166,7 +166,7 @@
                                                     <td><span class="badge" style="background-color: #6f42c1; color: white;">وصلت إلى مخزن ليبيا</span></td>
                                                     <td>2023-11-01</td>
                                                     <td class="actions-btn-group">
-                                                        <button type="button" class="btn btn-sm btn-info" title="عرض التفاصيل"><i class="fa fa-eye"></i></button>
+                                                        <button type="button" class="btn btn-sm btn-outline-info" title="عرض التفاصيل"><i class="fa fa-eye"></i></button>
                                                         <button type="button" class="btn btn-sm btn-warning" title="تعديل"><i class="fa fa-edit"></i></button>
                                                         <button type="button" class="btn btn-sm btn-danger" title="حذف"><i class="fa fa-trash"></i></button>
                                                     </td>

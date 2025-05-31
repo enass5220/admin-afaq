@@ -100,7 +100,7 @@ $addresses = [
                                                             <?php endif; ?>
                                                         </td>
                                                         <td>
-                                                            <a href="edit_address.php?id=<?php echo $address['id']; ?>" class="btn btn-sm btn-info btn-icon-text">
+                                                            <a href="edit_address.php?id=<?php echo $address['id']; ?>" class="btn btn-sm btn-outline-info btn-icon-text">
                                                                 <i class="mdi mdi-pencil btn-icon-prepend"></i> تعديل
                                                             </a>
                                                             <!-- Add delete button/form here if needed -->
