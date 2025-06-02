@@ -30,28 +30,16 @@
                       <table class="table table-hover">
                         <thead>
                           <tr>
+                            <th>#</th>
                             <th>عنوان الشحن</th>
                             <th>وحدة القياس</th>
                             <th>السعر</th>
-                            <th>الحالة</th>
                             <th>تاريخ الانشاء</th>
+                            <th></th>
                           </tr>
                         </thead>
-                        <tbody>
-                          <tr>
-                            <td>تركيا - جوي</td>
-                            <td>1 kg</td> <!-- join unit measurment for type --->
-                            <td>3 USD</td> <!-- join currencys for type --->
-                            <td><label class="badge badge-danger">مٌفعل</label></td>
-                            <td>15 مايو 2017</td>
-                          </tr>
-                          <tr>
-                          <td>الصين- بحري</td>
-                            <td>1 cbm</td>
-                            <td>10 USD</td> <!-- join currencys for type --->
-                            <td><label class="badge badge-danger">مٌفعل</label></td>
-                            <td>15 مايو 2017</td>
-                          </tr>
+                        <tbody id="tbody">
+                          
                         </tbody>
                       </table>
                     </div>
@@ -65,5 +53,43 @@
     </div>
 </div>
 <?php include 'js.php';?>
+<script>
+   $(document).ready(function(){
+    let searchResultsList = $('#tbody');
+  const apiUrl = 'server/select_shipprice.php';
+  $.ajax({
+    url: apiUrl,
+    type: 'GET',
+    contentType: 'application/json', // Telling the server we're sending JSON
+    dataType: 'json', // Expecting JSON response from the server
+    success: function(data) {
+        let i=1;
+      if (data && data.length > 0) {
+                            data.forEach(function(rates) {
+                                let item = `<tr>
+                                <td>${i++}</td>
+                            <td>${rates.address}</td>
+                            <td>${rates.unit}</td>
+                            <td>${rates.curr}</td>
+                            <td>${rates.date}</td>`;
+                            item +=`<td><a href="#" class=" btn-outline-info ${rates.id}" >تعديل</a></td>`;
+                            item +='</tr>';
+                                searchResultsList.append(item);
+                            });
+                        } else if (data && data.error) {
+                           console.log('خطأ: ' + data.error);
+                        } else {
+                            searchResultsList.html('<tr><td colspan="4">لم يتم ادخال بيانات بعد.</td></tr>');
+                        }
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+      console.error('Error Status:', textStatus);
+      console.error('Error Thrown:', errorThrown);
+      console.error('Response Text:', jqXHR.responseText);
+    }
+    });
+  });
+ </script>
+
 </body>
 </html>

@@ -57,7 +57,7 @@
                                             </div>
                                             <div class="col-md-3 mb-3">
                                                 <label for="filterStatus" class="form-label">حالة الشحنة</label>
-                                                <select class="form-select" id="filterStatus" name="filter_status" dir="">
+                                                <select class="form-select" id="filterStatus" name="filter_status" dir="rtl">
                                                     <option value="">الكل</option>
                                                     <option value="1">تم الانشاء</option>
                                                     <option value="2">وصلت إلى المخزن الخارجي</option>
@@ -69,7 +69,7 @@
                                             </div>
                                             <div class="col-md-3 mb-3">
                                                 <label for="filterShipmentMethod" class="form-label">طريقة الشحن</label>
-                                                <select class="form-select" id="filterShipmentMethod" name="filter_shipment_method" dir="">
+                                                <select class="form-select" id="filterShipmentMethod" name="filter_shipment_method" dir="rtl">
                                                     <option value="">الكل</option>
                                                     <option value="air">شحن جوي</option>
                                                     <option value="sea">شحن بحري</option>

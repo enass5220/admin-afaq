@@ -8,8 +8,19 @@ try {
     $pdo = conopen();
     // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Good practice
 
-    $sql = "SELECT id, curr_name as 'name', curr_short as 'code', rate_to_lyd as 'rate', is_active as 'active'
-            FROM exchange_rates";
+    $sql = "SELECT 
+    sp.id,
+    concat(sa.country,' (',
+        CASE
+            WHEN sa.shipping_type = 1 THEN 'جوي'
+            WHEN sa.shipping_type = 2 THEN 'بحري' -- Assuming 2 is 'بحري', add other cases as needed
+            ELSE sa.shipping_type -- If you want to show the raw number for other types
+        END
+    ,')') as address,
+    concat(`unit_number`,' ',`unit`) as 'unit',
+    concat( `currency`,' ',`price_per_unit`) as curr,
+    `effective_date` as 'date'
+    FROM `shipping_prices` sp inner join shipping_address sa on sa.id=sp.shipaddress_id";
 
     // Check if an 'id' GET parameter is set and is a valid number
     if (isset($_GET['id']) && filter_var($_GET['id'], FILTER_VALIDATE_INT, ["options" => ["min_range" => 1]])) {
@@ -21,8 +32,7 @@ try {
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($row) {
-            $row['active'] = (bool)$row['active'];
-            $row['rate'] = (float)$row['rate'];
+           // $row['active'] = (bool)$row['active'];
             $output = $row; // Output a single object
         } else {
             // ID was provided but not found
@@ -30,27 +40,14 @@ try {
             echo json_encode(['error' => 'Exchange rate not found for the given ID.']);
             exit;
         }
-    } if(isset($_GET['curr'])){
-        $sql .= " where is_active=1 group by curr_short";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute();
-        $rates = [];
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $row['active'] = (bool)$row['active'];
-            $row['rate'] = (float)$row['rate'];
-            $rates[] = $row;
-        }
-        $output = $rates;
-    }
-    else {
+    } else {
         // No valid ID provided, fetch all records
-        $sql .= " ORDER BY curr_name ASC"; // Or your preferred default order
+        //$sql .= " ORDER BY country ASC"; // Or your preferred default order
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         $rates = [];
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $row['active'] = (bool)$row['active'];
-            $row['rate'] = (float)$row['rate'];
+          //  $row['active'] = (bool)$row['active'];
             $rates[] = $row;
         }
         $output = $rates; // Output an array of objects

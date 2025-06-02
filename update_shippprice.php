@@ -26,7 +26,7 @@
                                     <form class="forms-sample" action="process_create_shipping.php" method="POST">
                                         <div class="form-group">
                                             <label for="address">عنوان الشحن</label>
-                                            <select dir=""class="form-select" id="address" name="address" required>
+                                            <select dir="rtl"class="form-select" id="address" name="address" required>
                                                 <option selected disabled>اختر</option>
                                                 <option value="1">تركيا جوي</option>
                                                 <option value="2">تركيا بحري</option>
