@@ -136,6 +136,7 @@
 }
 body{
   font-family: "Tajawal" !important;
+  direction: rtl !important;
 }
 @-webkit-keyframes flash {
   0% {

@@ -7,7 +7,7 @@
     <title>تعديل سعر شحن </title>
 </head>
 
-<body dir="rtl">
+<body >
     <div class="container-scroller">
         <?php include 'navbar.php'; // Assuming navbar.php contains the top navigation bar 
         ?>
@@ -26,7 +26,7 @@
                                     <form class="forms-sample" action="process_create_shipping.php" method="POST">
                                         <div class="form-group">
                                             <label for="address">عنوان الشحن</label>
-                                            <select dir="rtl"class="form-select" id="address" name="address" required>
+                                            <select class="form-select" id="address" name="address" required>
                                                 <option selected disabled>اختر</option>
                                                 <option value="1">تركيا جوي</option>
                                                 <option value="2">تركيا بحري</option>

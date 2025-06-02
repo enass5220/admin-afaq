@@ -4,7 +4,7 @@
     <?php include 'head.php'; // Assuming head.php contains meta tags, CSS links etc. ?>
     <title>عناوين الشحن</title>
 </head>
-<body dir="rtl">
+<body >
 <div class="container-scroller">
     <?php include 'navbar.php'; // Assuming navbar.php contains the top navigation bar ?>
     <div class="container-fluid page-body-wrapper">

@@ -132,7 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['tracking_id'])) {
         }
     </style>
 </head>
-<body dir="rtl">
+<body >
     <div class="container-scroller">
         <?php include 'navbar.php'; ?>
         <div class="container-fluid page-body-wrapper">

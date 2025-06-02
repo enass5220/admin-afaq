@@ -7,7 +7,7 @@
     <title>إضافة سعر شحن جديد</title>
 </head>
 
-<body dir="rtl">
+<body >
     <div class="container-scroller">
         <?php include 'navbar.php'; // Assuming navbar.php contains the top navigation bar 
         ?>

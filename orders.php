@@ -27,6 +27,7 @@
     <div class="container-scroller">
         <?php include 'navbar.php'; ?>
         <div class="container-fluid page-body-wrapper">
+            <?php include 'sidebar.php' ?>
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="row">
@@ -57,7 +58,7 @@
                                             </div>
                                             <div class="col-md-3 mb-3">
                                                 <label for="filterStatus" class="form-label">حالة الشحنة</label>
-                                                <select class="form-select" id="filterStatus" name="filter_status" dir="rtl">
+                                                <select class="form-select" id="filterStatus" name="filter_status" >
                                                     <option value="">الكل</option>
                                                     <option value="1">تم الانشاء</option>
                                                     <option value="2">وصلت إلى المخزن الخارجي</option>
@@ -69,7 +70,7 @@
                                             </div>
                                             <div class="col-md-3 mb-3">
                                                 <label for="filterShipmentMethod" class="form-label">طريقة الشحن</label>
-                                                <select class="form-select" id="filterShipmentMethod" name="filter_shipment_method" dir="rtl">
+                                                <select class="form-select" id="filterShipmentMethod" name="filter_shipment_method" >
                                                     <option value="">الكل</option>
                                                     <option value="air">شحن جوي</option>
                                                     <option value="sea">شحن بحري</option>
@@ -195,7 +196,6 @@
                     <?php include 'footer.php'; ?>
                 </div>
             </div>
-            <?php include 'sidebar.php' ?>
         </div>
     </div>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />

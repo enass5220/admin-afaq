@@ -66,7 +66,7 @@ try {
     </style>
 </head>
 
-<body dir="rtl">
+<body >
     <div class="container-scroller">
         <?php include 'navbar.php'; ?>
         <div class="container-fluid page-body-wrapper">
