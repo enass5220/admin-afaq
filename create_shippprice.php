@@ -72,7 +72,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="currency">العملة</label>
-                                                    <select class="form-select" id="currency" name="currency" required>
+                                                    <select dir ="ltr" class="form-select" id="currency" name="currency" required>
                                                         <option selected disabled>اختر نوع العملة</option>
 
                                                         <!-- Add other currencies as needed -->

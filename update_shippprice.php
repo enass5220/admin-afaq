@@ -26,7 +26,7 @@
                                     <form class="forms-sample" action="process_create_shipping.php" method="POST">
                                         <div class="form-group">
                                             <label for="address">عنوان الشحن</label>
-                                            <select class="form-select" id="address" name="address" required>
+                                            <select dir ="ltr" class="form-select" id="address" name="address" required>
                                                 <option selected disabled>اختر</option>
                                                 <option value="1">تركيا جوي</option>
                                                 <option value="2">تركيا بحري</option>
@@ -51,7 +51,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="currency">العملة</label>
-                                                    <select class="form-select" id="currency" name="currency" required>
+                                                    <select dir ="ltr" class="form-select" id="currency" name="currency" required>
                                                         <option value="USD">USD</option>
                                                         <option value="EUR">EUR</option>
                                                         <option value="TRY">TRY</option>

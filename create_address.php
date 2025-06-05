@@ -31,7 +31,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="shipping_type">نوع الشحن </label>
-                                                    <select class="form-select" dir="ltr" id="type" name="shipping_type" required>
+                                                    <select dir ="ltr" class="form-select" dir="ltr" id="type" name="shipping_type" required>
                                                         <option selected disabled>اختر نوع الشحن</option>
                                                         <option value="1">جوي</option>
                                                         <option value="2">بحري</option>

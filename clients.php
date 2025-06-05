@@ -3,39 +3,12 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-
-// --- DATABASE CONNECTION ---
-// Option 1: Include your existing connection file
-//require_once 'db_connection.php'; // Make sure this file exists and creates a $pdo or $mysqli object
-
-// Option 2: Define connection here (less recommended for multiple files)
-/*
-$host = 'localhost';
-$db   = 'your_database_name';
-$user = 'your_db_user';
-$pass = 'your_db_password';
-$charset = 'utf8mb4';
-
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-$options = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES   => false,
-];
-try {
-     $pdo = new PDO($dsn, $user, $pass, $options);
-} catch (\PDOException $e) {
-     // In a real app, log this error and show a generic message
-     error_log("Database Connection Error: " . $e->getMessage());
-     die("حدث خطأ في الاتصال بقاعدة البيانات. الرجاء المحاولة لاحقاً.");
-}
-*/
-// --- END DATABASE CONNECTION ---
-
+include "server/connn.php";
+$pdo=conopen();
 
 $clients = [];
 $error_message = '';
-/* 
+ 
 try {
     // Your SQL query (avoid selecting password_hash unless absolutely necessary for some backend logic,
     // and never display it on the frontend)
@@ -47,7 +20,7 @@ try {
     // For development, you might want to see the error:
     // $error_message = "Error: " . $e->getMessage();
 }
- */
+/* */
 ?>
 <!DOCTYPE html>
 <html lang="ar">
@@ -95,7 +68,7 @@ try {
                                             </p>
                                         </div>
                                         <div>
-                                            <a href="create_client.php" class="btn btn-primary btn-icon-text">
+                                            <a href="new_client.php" class="btn btn-primary btn-icon-text">
                                                 <i class="mdi mdi-plus btn-icon-prepend"></i>زبون جديد 
                                             </a>
                                         </div>

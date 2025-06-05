@@ -58,7 +58,7 @@
                                             </div>
                                             <div class="col-md-3 mb-3">
                                                 <label for="filterStatus" class="form-label">حالة الشحنة</label>
-                                                <select class="form-select" id="filterStatus" name="filter_status" >
+                                                <select dir ="ltr" class="form-select" id="filterStatus" name="filter_status" >
                                                     <option value="">الكل</option>
                                                     <option value="1">تم الانشاء</option>
                                                     <option value="2">وصلت إلى المخزن الخارجي</option>
@@ -70,7 +70,7 @@
                                             </div>
                                             <div class="col-md-3 mb-3">
                                                 <label for="filterShipmentMethod" class="form-label">طريقة الشحن</label>
-                                                <select class="form-select" id="filterShipmentMethod" name="filter_shipment_method" >
+                                                <select dir ="ltr" class="form-select" id="filterShipmentMethod" name="filter_shipment_method" >
                                                     <option value="">الكل</option>
                                                     <option value="air">شحن جوي</option>
                                                     <option value="sea">شحن بحري</option>
@@ -126,8 +126,8 @@
                                                     <td>2023-10-22</td>
                                                     <td class="actions-btn-group">
                                                         <button type="button" class="btn btn-sm btn-outline-info" title="عرض التفاصيل"><i class="fa fa-eye"></i></button>
-                                                        <button type="button" class="btn btn-sm btn-warning" title="تعديل"><i class="fa fa-edit"></i></button>
-                                                        <button type="button" class="btn btn-sm btn-danger" title="حذف"><i class="fa fa-trash"></i></button>
+                                                        <button type="button" class="btn btn-sm btn-outline-warning" title="تعديل"><i class="fa fa-edit"></i></button>
+                                                        <button type="button" class="btn btn-sm btn-outline-danger" title="حذف"><i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
                                                 <tr>

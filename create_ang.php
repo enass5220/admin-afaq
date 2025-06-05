@@ -114,7 +114,7 @@
                                                 </div>
                                                 <div class="col-md-6 my-auto">
                                                     <label for="exchange_rate" class="form-label">سعر الصرف</label>
-                                                    <select class="form-select" dir="ltr" id="exchange_rate" name="exchange_rate"
+                                                    <select dir ="ltr" class="form-select" dir="ltr" id="exchange_rate" name="exchange_rate"
                                                             [(ngModel)]="shipment.exchange_rate" (ngModelChange)="calculateFinalPrice()" required #exchange_rate_field="ngModel">
                                                         <option value="" selected disabled>-- اختر سعر الصرف --</option>
                                                         <option *ngFor="let rate of availableExchangeRates" [value]="rate.value">{{rate.label}}</option>
@@ -136,7 +136,7 @@
                                                 </div>
                                                 <div class="col-md-6 my-auto">
                                                     <label for="shipment_method" class="form-label">طريقة الشحن</label>
-                                                    <select dir="ltr" class="form-select" id="shipment_method" name="shipment_method"
+                                                    <select dir="ltr" dir ="ltr" class="form-select" id="shipment_method" name="shipment_method"
                                                             [(ngModel)]="shipment.shipment_method" required #shipment_method_field="ngModel">
                                                         <option value="" selected disabled>-- اختر طريقة الشحن --</option>
                                                         <option value="air">شحن جوي</option>
@@ -153,7 +153,7 @@
                                             <div class="row">
                                                 <div class="col-md-6 mb-3">
                                                     <label for="ostate" class="form-label">حالة الشحنة (للمشرف)</label>
-                                                    <select dir="ltr" class="form-select" id="ostate" name="ostate" [(ngModel)]="shipment.ostate">
+                                                    <select dir="ltr" dir ="ltr" class="form-select" id="ostate" name="ostate" [(ngModel)]="shipment.ostate">
                                                         <option value="1">تم الانشاء</option>
                                                         <option value="2">وصلت إلى المخزن الخارجي</option>
                                                         <option value="3">وصلت إلى مخزن ليبيا</option>
@@ -163,7 +163,7 @@
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="payment_status" class="form-label">حالة الدفع</label>
-                                                    <select dir="ltr" class="form-select" id="payment_status" name="payment_status" [(ngModel)]="shipment.payment_status">
+                                                    <select dir="ltr" dir ="ltr" class="form-select" id="payment_status" name="payment_status" [(ngModel)]="shipment.payment_status">
                                                         <option value="pending">في انتظار الدفع</option>
                                                         <option value="unpaid">غير مدفوعة</option>
                                                         <option value="paid">مدفوعة</option>
