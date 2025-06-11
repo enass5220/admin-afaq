@@ -69,7 +69,7 @@
                                 let item = `<tr>
                                 <td>${i++}</td>
                             <td>${rates.address}</td>
-                            <td>${rates.unit}</td>
+                            <td>${rates.unitt}</td>
                             <td>${rates.curr}</td>
                             <td>${rates.date}</td>`;
                             item +=`<td><a href="#" class=" btn-outline-info ${rates.id}" >تعديل</a></td>`;

@@ -31,7 +31,12 @@ try {
             exit;
         }
     } if(isset($_GET['curr'])){
-        $sql .= " where is_active=1 group by curr_short";
+        if($_GET['curr'] == '1')
+        {
+            $sql .= " where is_active=1";
+        }else{
+            $sql .= " where curr_short='".$_GET['curr']."' order by is_active, id";
+        }
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         $rates = [];

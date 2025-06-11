@@ -238,11 +238,11 @@ if ($shipment_data) {
                 <div class="item-details">
                     <p><strong>رابط الطلبية:</strong> <a href="<?php echo htmlspecialchars($shipment_data['olink']); ?>" target="_blank">عرض السلعة</a></p>
                     <p><strong>السعر الأصلي:</strong> <?php echo number_format($shipment_data['total_price_orig'], 2); ?> <?php echo htmlspecialchars($shipment_data['currency_orig']); ?></p>
-                    <p><strong>سعر الصرف:</strong> <?php echo number_format($shipment_data['exchange_rate'], 2); ?> LYD/<?php echo htmlspecialchars($shipment_data['currency_orig']); ?></p>
-                    <p><strong>السعر بالدينار:</strong> <?php echo number_format($shipment_data['total_price_lyd'], 2); ?> LYD</p>
-                    <p><strong>تكلفة الشحن:</strong> <?php echo number_format($shipment_data['shipping_cost_lyd'] ?? 0, 2); ?> LYD</p>
+                    <p><strong>سعر الصرف:</strong> <?php echo number_format($shipment_data['exchange_rate'], 2); ?> د.ل./<?php echo htmlspecialchars($shipment_data['currency_orig']); ?></p>
+                    <p><strong>السعر بالدينار:</strong> <?php echo number_format($shipment_data['total_price_lyd'], 2); ?> د.ل.</p>
+                    <p><strong>تكلفة الشحن:</strong> <?php echo number_format($shipment_data['shipping_cost_lyd'] ?? 0, 2); ?> د.ل.</p>
                     <hr class="dotted">
-                    <p class="fw-bold"><strong>الإجمالي المستحق:</strong> <?php echo number_format($grand_total_lyd, 2); ?> LYD</p>
+                    <p class="fw-bold"><strong>الإجمالي المستحق:</strong> <?php echo number_format($grand_total_lyd, 2); ?> د.ل.</p>
                 </div>
                 <hr class="dotted">
                 <div class="payment-details">
@@ -252,7 +252,7 @@ if ($shipment_data) {
                             <?php echo isset($payment_status_labels[$payment_data['payment_status']]) ? htmlspecialchars($payment_status_labels[$payment_data['payment_status']]) : 'غير محدد'; ?>
                         </div>
                         <?php if ($payment_data['payment_status'] === 'paid' || $payment_data['payment_status'] === 'partial'): ?>
-                            <p><strong>المبلغ المدفوع:</strong> <?php echo number_format($payment_data['amount_paid_lyd'], 2); ?> LYD</p>
+                            <p><strong>المبلغ المدفوع:</strong> <?php echo number_format($payment_data['amount_paid_lyd'], 2); ?> د.ل.</p>
                             <?php if($payment_data['payment_date']): ?>
                             <p><strong>تاريخ الدفع:</strong> <?php echo date("Y-m-d H:i", strtotime($payment_data['payment_date'])); ?></p>
                             <?php endif; ?>
@@ -261,7 +261,7 @@ if ($shipment_data) {
                             <?php endif; ?>
                         <?php endif; ?>
                         <?php if ($payment_data['payment_status'] === 'partial' && $grand_total_lyd > $payment_data['amount_paid_lyd']): ?>
-                            <p class="fw-bold"><strong>المبلغ المتبقي:</strong> <?php echo number_format($grand_total_lyd - $payment_data['amount_paid_lyd'], 2); ?> LYD</p>
+                            <p class="fw-bold"><strong>المبلغ المتبقي:</strong> <?php echo number_format($grand_total_lyd - $payment_data['amount_paid_lyd'], 2); ?> د.ل.</p>
                         <?php endif; ?>
                     <?php else: ?>
                         <p class="text-center">لا توجد معلومات دفع مسجلة.</p>

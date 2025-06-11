@@ -27,17 +27,17 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="address">عنوان الشحن</label>
+                                                    <label for="address1">عنوان الشحن</label>
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" id="address" aria-label="address"
-                                                            name="address" placeholder="اختر عنوان الشحن" readonly data-bs-toggle="modal" data-bs-target="#userLookupModal">
+                                                        <input type="text" class="form-control" id="address1" aria-label="address1"
+                                                            name="address1" placeholder="اختر عنوان الشحن" readonly data-bs-toggle="modal" data-bs-target="#userLookupModal1">
                                                         <button type="button" id="lookupUserBtn" class="btn btn-outline-secondary"
-                                                            data-bs-toggle="modal" data-bs-target="#userLookupModal">
+                                                            data-bs-toggle="modal" data-bs-target="#userLookupModal1">
                                                             <i class="fa fa-search"></i>
                                                         </button>
                                                     </div>
                                                     <!-- Optional: Add a hidden input if you also want to store the user ID -->
-                                                    <input type="hidden" id="add_id" name="add_id">
+                                                    <input type="hidden" id="add_id1" name="add_id1">
                                                 </div>
                                             </div>
                                             <!-- <div class="col-md-3">
@@ -96,26 +96,26 @@
         </div>
     </div>
     <!-- User Lookup Modal -->
-    <div class="modal fade" id="userLookupModal" tabindex="-1" aria-labelledby="userLookupModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg"> <!-- modal-lg for a wider modal -->
+    <div class="modal fade" id="userLookupModal1" tabindex="-1" aria-labelledby="userLookupModalLabel" aria-hidden="true">
+        <div class="modal-dialog "> <!-- modal-lg for a wider modal -->
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="userLookupModalLabel">بحث عن مستخدم</h5>
+                    <h5 class="modal-title" id="userLookupModalLabel">بحث عن عنوان</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
                         <div class="input-group">
-                            <input type="text" class="form-control" id="modalSearchTerm" placeholder="ابحث بالاسم أو اسم المستخدم">
-                            <button class="btn btn-primary" type="button" id="modalSearchBtn">بحث </button>
+                            <input type="text" class="form-control" id="modalSearchTerm1" placeholder="ابحث بتفاصيل العنوان أو البلد">
+                            <button class="btn btn-primary" type="button" id="modalSearchBtn1">بحث </button>
                         </div>
                     </div>
                     <div id="modalSearchResultsContainer" style="max-height: 300px; overflow-y: auto;">
                         <!-- Search results will be loaded here -->
-                        <p class="text-muted text-center" id="modalSearchPlaceholder">اكتب للبحث</p>
-                        <ul class="list-group" id="modalSearchResultsList">
+                        <p class="text-muted text-center" id="modalSearchPlaceholder1">اكتب للبحث</p>
+                        <ul class="list-group" id="modalSearchResultsList1">
                         </ul>
-                        <div id="modalLoadingIndicator" class="text-center" style="display:none;">
+                        <div id="modalLoadingIndicator1" class="text-center" style="display:none;">
                             <div class="spinner-border text-primary" role="status">
                                 <span class="visually-hidden">جاري التحميل...</span>
                             </div>
@@ -134,56 +134,32 @@
         $(document).ready(function() {
             fillSelectCurr();
 
-            const $modalSearchUser = $('#userLookupModal');
-            const $searchTermInput = $('#modalSearchTerm');
-            const $searchResultsList = $('#modalSearchResultsList');
-            const $searchPlaceholder = $('#modalSearchPlaceholder');
-            const $loadingIndicator = $('#modalLoadingIndicator');
-            const $mainUsernameInput = $('#address'); // The input field on your main form
-            const $mainUserIdInput = $('#add_id'); // The hidden input for user ID on your main form
+            const $modalSearchUser1 = $('#userLookupModal1');
+            const $searchTermInput1 = $('#modalSearchTerm1');
+            const $searchResultsList1 = $('#modalSearchResultsList1');
+            const $searchPlaceholder1 = $('#modalSearchPlaceholder1');
+            const $loadingIndicator1 = $('#modalLoadingIndicator1');
+            const $mainUsernameInput1 = $('#address1'); // The input field on your main form
+            const $mainUserIdInput1 = $('#add_id1'); // The hidden input for user ID on your main form
 
             // 1. Handle Search Button Click inside Modal
-            $('#modalSearchBtn').on('click', function() {
-                performSearch();
+            $('#modalSearchBtn1').on('click', function() {
+                performSearch1();
             });
 
             // Allow search on pressing Enter in the modal search input
-            $searchTermInput.on('input', performSearch);
+            $searchTermInput1.on('input', performSearch1);
 
-            function fillSelectCurr() {
-                $.ajax({
-                    url: 'server/select_exrate.php?curr=1',
-                    type: 'GET',
-                    contentType: 'application/json', // Telling the server we're sending JSON
-                    dataType: 'json', // Expecting JSON response from the server
-                    success: function(data) {
-                        if (data && data.length > 0) {
-                            data.forEach(function(rates) {
-                                let item = `<option value="${rates.code}">${rates.name} (${rates.code})</option>`;
-                                $('#currency').append(item);
-                            });
-                        } else if (data && data.error) {
-                            console.log('خطأ: ' + data.error);
-                        }
-                    },
-                    error: function(jqXHR, textStatus, errorThrown) {
-                        console.error('Error Status:', textStatus);
-                        console.error('Error Thrown:', errorThrown);
-                        console.error('Response Text:', jqXHR.responseText);
-                    }
-                });
-            }
-
-            function performSearch() {
-                let term = $searchTermInput.val().trim();
-                $searchResultsList.empty(); // Clear previous results
-                $searchPlaceholder.hide(); // Hide placeholder
+            function performSearch1() {
+                let term = $searchTermInput1.val().trim();
+                $searchResultsList1.empty(); // Clear previous results
+                $searchPlaceholder1.hide(); // Hide placeholder
                 if (term.length == 0) { // Minimum 1 char to search, adjust as needed
-                    $searchPlaceholder.text('الرجاء إدخال حرف واحد على الأقل للبحث').show();
+                    $searchPlaceholder1.text('الرجاء إدخال حرف واحد على الأقل للبحث').show();
                     return;
                 }
 
-                $loadingIndicator.show();
+                $loadingIndicator1.show();
 
                 $.ajax({
                     url: 'server/search_address.php', // Path to your PHP script
@@ -193,7 +169,7 @@
                     },
                     dataType: 'json',
                     success: function(users) {
-                        $loadingIndicator.hide();
+                        $loadingIndicator1.hide();
                         if (users && users.length > 0) {
                             users.forEach(function(user) {
                                 let typ = '';
@@ -224,56 +200,80 @@
                                 <i class="fa fa-check"></i> اختيار 
                                 </button>
                             </li>`;
-                                $searchResultsList.append(listItem);
+                                $searchResultsList1.append(listItem);
                             });
                         } else if (users && users.error) {
-                            $searchPlaceholder.text('خطأ: ' + users.error).show();
+                            $searchPlaceholder1.text('خطأ: ' + users.error).show();
                         } else {
-                            $searchPlaceholder.text('لم يتم العثور على عناوين (No users found).').show();
+                            $searchPlaceholder1.text('لم يتم العثور على عناوين (No users found).').show();
                         }
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
-                        $loadingIndicator.hide();
+                        $loadingIndicator1.hide();
                         console.error("AJAX Error:", textStatus, errorThrown, jqXHR.responseText);
-                        $searchPlaceholder.text('حدث خطأ أثناء البحث. حاول مرة أخرى. (Error during search. Please try again.)').show();
+                        $searchPlaceholder1.text('حدث خطأ أثناء البحث. حاول مرة أخرى. (Error during search. Please try again.)').show();
                     }
                 });
             }
 
             // 2. Handle User Selection from Modal Results (Event Delegation)
-            $searchResultsList.on('click', '.select-user-btn', function() {
+            $searchResultsList1.on('click', '.select-user-btn', function() {
                 const selectedUsername = $(this).data('username');
                 const selectedUserId = $(this).data('userid');
                 const selectedPhone = $(this).data('phone');
 
-                $mainUsernameInput.val(selectedUsername);
-                if ($mainUserIdInput.length) { // Check if the hidden add_id input exists
-                    $mainUserIdInput.val(selectedUserId);
+                $mainUsernameInput1.val(selectedUsername);
+                if ($mainUserIdInput1.length) { // Check if the hidden add_id1 input exists
+                    $mainUserIdInput1.val(selectedUserId);
                 }
 
                 // Optionally, trigger a change event if other parts of your page depend on it
-                $mainUsernameInput.trigger('change');
+                $mainUsernameInput1.trigger('change');
 
-                $modalSearchUser.modal('toggle'); // Hide the modal using Bootstrap's JavaScript API
+                $modalSearchUser1.modal('toggle'); // Hide the modal using Bootstrap's JavaScript API
             });
 
             // 3. Optional: Clear search results when modal is closed or re-opened
-            $modalSearchUser.on('hidden.bs.modal', function() {
-                $searchTermInput.val(''); // Clear search term
-                $searchResultsList.empty(); // Clear results
-                $searchPlaceholder.text('أدخل معايير البحث أعلاه .').show();
-                $loadingIndicator.hide();
+            $modalSearchUser1.on('hidden.bs.modal', function() {
+                $searchTermInput1.val(''); // Clear search term
+                $searchResultsList1.empty(); // Clear results
+                $searchPlaceholder1.text('أدخل معايير البحث أعلاه .').show();
+                $loadingIndicator1.hide();
             });
 
             // Optional: Focus on search input when modal is shown
-            $modalSearchUser.on('shown.bs.modal', function() {
-                $searchTermInput.focus();
+            $modalSearchUser1.on('shown.bs.modal', function() {
+                $searchTermInput1.focus();
             });
+            function fillSelectCurr() {
+                $.ajax({
+                    url: 'server/select_exrate.php?curr=1',
+                    type: 'GET',
+                    contentType: 'application/json', // Telling the server we're sending JSON
+                    dataType: 'json', // Expecting JSON response from the server
+                    success: function(data) {
+                        if (data && data.length > 0) { 
+                            data.forEach(function(rates) {
+                                let item = `<option value="${rates.id}">${rates.name} (${rates.code}) = ${rates.rate} د.ل.</option>`;
+                                $('#currency').append(item);
+                            });
+                        } else if (data && data.error) {
+                            console.log('خطأ: ' + data.error);
+                        }
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.error('Error Status:', textStatus);
+                        console.error('Error Thrown:', errorThrown);
+                        console.error('Response Text:', jqXHR.responseText);
+                    }
+                });
+            }
+
             $('#createform').on('submit', function(event) {
                 // Prevent the default form submission which would cause a page reload
                 event.preventDefault();
                 const rate = {
-                    addr: $('#add_id').val(),
+                    addr: $('#add_id1').val(),
                     munit: $('#munit').val(),
                     price: $('#price').val(),
                     curr: $('#currency').val(),

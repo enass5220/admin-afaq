@@ -9,7 +9,8 @@ try {
     // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Good practice
 
     $sql = "SELECT 
-    sp.id,
+    sp.id, sa.country, unit_number, unit,
+     `curr_id`, curr_short, `price_per_unit`, 
     concat(sa.country,' (',
         CASE
             WHEN sa.shipping_type = 1 THEN 'جوي'
@@ -17,15 +18,18 @@ try {
             ELSE sa.shipping_type -- If you want to show the raw number for other types
         END
     ,')') as address,
-    concat(`unit_number`,' ',`unit`) as 'unit',
-    concat( `currency`,' ',`price_per_unit`) as curr,
+    concat(`unit_number`,`unit`) as 'unitt',
+    concat( `curr_short`,`price_per_unit`) as curr,
     `effective_date` as 'date'
-    FROM `shipping_prices` sp inner join shipping_address sa on sa.id=sp.shipaddress_id";
+    FROM `shipping_prices` sp
+     inner join shipping_address sa on sa.id=sp.shipaddress_id
+     inner join exchange_rates c on c.id=sp.curr_id
+     "; // Only active records
 
     // Check if an 'id' GET parameter is set and is a valid number
     if (isset($_GET['id']) && filter_var($_GET['id'], FILTER_VALIDATE_INT, ["options" => ["min_range" => 1]])) {
         $id = (int)$_GET['id'];
-        $sql .= " WHERE id = :id";
+        $sql .= " WHERE sp.id = :id";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
@@ -40,9 +44,28 @@ try {
             echo json_encode(['error' => 'Exchange rate not found for the given ID.']);
             exit;
         }
-    } else {
-        // No valid ID provided, fetch all records
-        //$sql .= " ORDER BY country ASC"; // Or your preferred default order
+    }else if (isset($_GET['add'])) {
+        $id = (int)$_GET['add'];
+        $sql .= " WHERE sp.shipaddress_id = :add";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':add', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        $rates = [];
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+          //  $row['active'] = (bool)$row['active'];
+            $rates[] = $row;
+        }
+
+        if ($rates) {
+            $output = $rates;
+        } else {
+            // ID was provided but not found
+            http_response_code(404); // Not Found
+            echo json_encode(['error' => 'Exchange rate not found for the given ID.']);
+            exit;
+        }
+    }  else {
+        $sql .= " WHERE sa.is_active = 1"; 
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         $rates = [];

@@ -11458,7 +11458,21 @@ textarea.is-invalid.tt-hint, .select2-container--default .select2-selection--sin
   --bs-btn-disabled-bg: #4B49AC;
   --bs-btn-disabled-border-color: #4B49AC;
 }
-
+.btn-info {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #248AFD;
+  --bs-btn-border-color: #248AFD;
+  --bs-btn-hover-bg:  #67abf8;
+  --bs-btn-hover-border-color:  #248AFD;
+  --bs-btn-focus-shadow-rgb: 102, 100, 184;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg:  #248AFD;
+  --bs-btn-active-border-color:  #248AFD;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #89aacf;
+  --bs-btn-disabled-border-color: #89aacf;
+}
 .btn-secondary {
   --bs-btn-color: #000;
   --bs-btn-bg: #a3a4a5;
@@ -11495,7 +11509,6 @@ textarea.is-invalid.tt-hint, .select2-container--default .select2-selection--sin
 
 .btn-outline-info {
   --bs-btn-color: #000;
-  --bs-btn-bg: #248AFD;
   --bs-btn-border-color: #248AFD;
   --bs-btn-hover-color: #000;
   --bs-btn-hover-bg: #459cfd;

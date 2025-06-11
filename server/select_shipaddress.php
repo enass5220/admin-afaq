@@ -8,7 +8,7 @@ try {
     $pdo = conopen();
     // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Good practice
 
-    $sql = "SELECT id, country, shipping_type 'type', location_address 'address', is_active 'active' FROM shipping_address";
+    $sql = "SELECT id, country, shipping_type 'type', location_address 'address', is_active 'active', created_at as created FROM shipping_address";
 
     // Check if an 'id' GET parameter is set and is a valid number
     if (isset($_GET['id']) && filter_var($_GET['id'], FILTER_VALIDATE_INT, ["options" => ["min_range" => 1]])) {

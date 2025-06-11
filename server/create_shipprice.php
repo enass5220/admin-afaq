@@ -60,10 +60,7 @@ if (!isset($data['price']) || !is_numeric($data['price']) || floatval($data['pri
 if (empty($data['curr'])) {
     $errors['curr'] = 'Currency is required.';
 } else {
-    $curr = trim(strtoupper(htmlspecialchars($data['curr'])));
-    if (strlen($curr) !== 3) { // Basic check for 3-letter currency code
-        $errors['curr'] = 'Currency code must be 3 characters.';
-    }
+    $curr = $data['curr']; // Basic sanitization
 }
 
 // Validate 'nunit' (numeric unit)
@@ -105,7 +102,7 @@ if (!empty($errors)) {
 // Example table structure at the end of this script
 
 try {
-    $sql = "INSERT INTO shipping_prices (shipaddress_id , unit, unit_number, price_per_unit, currency, created_at, effective_date)
+    $sql = "INSERT INTO shipping_prices (shipaddress_id , unit, unit_number, price_per_unit, curr_id, created_at, effective_date)
             VALUES (:addr, :munit, :nunit, :price, :curr, NOW(), NOW())";
 
     $stmt = $pdo->prepare($sql);

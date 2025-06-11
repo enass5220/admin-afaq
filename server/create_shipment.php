@@ -35,24 +35,18 @@ try {
     $olink = $input['olink'];
     $total_price_orig = (float) $input['total_price_orig'];
     $currency_orig = isset($input['currency_orig']) ? $input['currency_orig'] : 'USD';
-    $exchange_rate = (float) $input['exchange_rate'];
+    $exchange_rate =  $input['exchange_rate'];
     $total_price_lyd = (float) $input['total_price_lyd']; // Should be recalculated server-side for security
     $shipment_method = $input['shipment_method'];
     $ostate = isset($input['ostate']) ? $input['ostate'] : '1'; // Default state
     $payment_status = isset($input['payment_status']) ? $input['payment_status'] : 'pending';
 
-    // Server-side recalculation of final price for integrity
-    if ($total_price_orig && $exchange_rate) {
-        $calculated_total_price_lyd = round($total_price_orig * $exchange_rate, 2);
-        // You might want to compare $calculated_total_price_lyd with $input['total_price_lyd']
-        // and log discrepancies, but generally trust the server-side calculation.
-        $total_price_lyd = $calculated_total_price_lyd;
-    }
-
+    $datePart = date('ymd'); // Short year '23', month, day
+    //$userPart = "U" . $username;
 
     // SQL to insert data (adjust table and column names)
-    $sql = "INSERT INTO shipments (username, orderno, trackno, olink, total_price_orig, currency_orig, exchange_rate, total_price_lyd, shipment_method, ostate, payment_status, created_at) 
-            VALUES (:username, :orderno, :trackno, :olink, :total_price_orig, :currency_orig, :exchange_rate, :total_price_lyd, :shipment_method, :ostate, :payment_status, NOW())";
+    $sql = "INSERT INTO orders (user_id , order_number , tracking_number, shein_link, total_cost_usd, exchange_rate_id, total_cost_lyd, shipadd_id , order_status, created_at,admin_id) 
+            VALUES (:username, :orderno, :trackno, :olink, :total_price_orig, :exchange_rate, :total_price_lyd, :shipment_method, :ostate, NOW(),1)";
     
     $stmt = $pdo->prepare($sql);
     
@@ -62,21 +56,23 @@ try {
         ':trackno' => $trackno,
         ':olink' => $olink,
         ':total_price_orig' => $total_price_orig,
-        ':currency_orig' => $currency_orig,
         ':exchange_rate' => $exchange_rate,
         ':total_price_lyd' => $total_price_lyd,
         ':shipment_method' => $shipment_method,
-        ':ostate' => $ostate,
-        ':payment_status' => $payment_status
+        ':ostate' => $ostate
     ]);
-
+    // creating order code
     $shipmentId = $pdo->lastInsertId();
+    $orderPart = "T" . $shipmentId;
+    $code=$datePart.$orderPart;
+    $updateStmt = $pdo->prepare("UPDATE orders SET order_code = ? WHERE id = ?");
+    $updateStmt->execute([$code, $shipmentId]);
 
     http_response_code(201); // Created
     echo json_encode([
         'success' => true,
         'message' => 'تم إنشاء طلب الشحن بنجاح!',
-        'shipmentId' => $shipmentId
+        'shipmentId' => $code
     ]);
 
 } catch (\PDOException $e) {
